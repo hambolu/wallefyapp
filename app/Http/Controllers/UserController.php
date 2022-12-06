@@ -8,7 +8,7 @@ use App\Models\Settings;
 use Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use App\Traits\AccountCreation;
+use App\Http\Traits\AccountCreation;
 
 class UserController extends Controller
 {
