@@ -1,5 +1,5 @@
 @extends('layouts.auth')
-@section('name')
+@section('content')
 
 <h3 class="text-center">Sign In</h3>
 <form action="/login" method="post">
