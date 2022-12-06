@@ -2,7 +2,7 @@
 namespace App\Http\Traits;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Http;
-use App\Model\User;
+use App\Models\User;
 use Auth;
 
 
