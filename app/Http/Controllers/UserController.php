@@ -8,9 +8,16 @@ use App\Models\Settings;
 use Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
+use App\Traits\AccountCreation;
 
 class UserController extends Controller
 {
+    use AccountCreation;
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
     public function updateProfile(Request $request)
     {
 
@@ -63,6 +70,8 @@ class UserController extends Controller
         $api_key->save();
         }
 
+
+        $accountcreation = $this->index();
 
         return back()->with('success','Update Successfully!');;
     }
