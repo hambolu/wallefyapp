@@ -83,12 +83,16 @@ trait AccountCreation{
             //     "url" => Auth::user()->identity_url,
             // ]);
             $account_holder_id = json_decode($data);
-            dd($account_holder_id);
+            //dd($account_holder_id);
+            if ($account_holder_id['status'] == 'failed') {
+
+            }else{
 
             $updateId = User::find(Auth::id());
             $updateId->account_holder_id = $account_holder_id['id'];
             $updateId->save();
             dd($data);
+            }
         }
 
     }
