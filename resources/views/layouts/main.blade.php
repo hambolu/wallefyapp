@@ -37,8 +37,8 @@
 			<!-- Logo Header -->
 			<div class="logo-header">
 
-				<a href="index.html" class="logo">
-					<img src="assets/img/wallefy-logo.png" width="20" alt="navbar brand" class="navbar-brand">
+				<a href="/dashboard" class="logo">
+					<img src="{{ asset('assets/img/wallefy-logo.png') }}" width="20" alt="navbar brand" class="navbar-brand">
                     <strong class="text-white">Wallefy</strong>
 				</a>
 				<button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse" data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
