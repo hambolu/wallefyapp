@@ -4,10 +4,10 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 	<title>Wallefy Dashboard</title>
 	<meta content='width=device-width, initial-scale=1.0, shrink-to-fit=no' name='viewport' />
-	<link rel="icon" href="{{  assets('assets/img/wallefy-logo.png')}}" type="image/x-icon"/>
+	<link rel="icon" href="{{  asset('assets/img/wallefy-logo.png')}}" type="image/x-icon"/>
 
 	<!-- Fonts and icons -->
-	<script src="{{ assets('assets/js/plugin/webfont/webfont.min.js')}}"></script>
+	<script src="{{ asset('assets/js/plugin/webfont/webfont.min.js')}}"></script>
 	<script>
 		WebFont.load({
 			google: {"families":["Open+Sans:300,400,600,700"]},
@@ -20,9 +20,9 @@
 
 	<!-- CSS Files -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-	<link rel="stylesheet" href="{{ assets('assets/css/bootstrap.min.css') }}">
-	<link rel="stylesheet" href="{{ assets('assets/css/azzara.min.css') }}">
-    <link rel="stylesheet" href="{{ assets('assets/css/style.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
+	<link rel="stylesheet" href="{{ asset('assets/css/azzara.min.css') }}">
+    <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}">
     {{-- @include('layouts.datatable') --}}
 
 	{{-- <!-- CSS Just for demo purpose, don't include it in your project -->
@@ -96,56 +96,56 @@
 	</div>
 </div>
 <!--   Core JS Files   -->
-<script src="{{ assets('assets/js/core/jquery.3.2.1.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/jquery.3.2.1.min.js') }}"></script>
 
-<script src="{{ assets('assets/js/core/popper.min.js') }}"></script>
-<script src="{{ assets('assets/js/core/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
 
 
 <!-- jQuery UI -->
-<script src="{{ assets('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
-<script src="{{ assets('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jquery-ui-1.12.1.custom/jquery-ui.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jquery-ui-touch-punch/jquery.ui.touch-punch.min.js') }}"></script>
 
 <!-- jQuery Scrollbar -->
-<script src="{{ assets('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jquery-scrollbar/jquery.scrollbar.min.js') }}"></script>
 
 <!-- Moment JS -->
-<script src="{{ assets('assets/js/plugin/moment/moment.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/moment/moment.min.js') }}"></script>
 
 <!-- Chart JS -->
-<script src="{{ assets('assets/js/plugin/chart.js/chart.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/chart.js/chart.min.js') }}"></script>
 
 <!-- jQuery Sparkline -->
-<script src="{{ assets('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jquery.sparkline/jquery.sparkline.min.js') }}"></script>
 
 <!-- Chart Circle -->
-<script src="{{ assets('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/chart-circle/circles.min.js') }}"></script>
 
 <!-- Datatables -->
-<script src="{{ assets('assets/js/plugin/datatables/datatables.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/datatables/datatables.min.js') }}"></script>
 
 <!-- Bootstrap Notify -->
-<script src="{{ assets('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/bootstrap-notify/bootstrap-notify.min.js') }}"></script>
 
 <!-- Bootstrap Toggle -->
-<script src="{{ assets('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/bootstrap-toggle/bootstrap-toggle.min.js') }}"></script>
 
 <!-- jQuery Vector Maps -->
-<script src="{{ assets('assets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
-<script src="{{ assets('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jqvmap/jquery.vmap.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/jqvmap/maps/jquery.vmap.world.js') }}"></script>
 
 <!-- Google Maps Plugin -->
-<script src="{{ assets('assets/js/plugin/gmaps/gmaps.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/gmaps/gmaps.js') }}"></script>
 
 <!-- Sweet Alert -->
-<script src="{{ assets('assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugin/sweetalert/sweetalert.min.js') }}"></script>
 
 <!-- Azzara JS -->
-<script src="{{ assets('assets/js/ready.min.js') }}"></script>
+<script src="{{ asset('assets/js/ready.min.js') }}"></script>
 
 <!-- Azzara DEMO methods, don't include it in your project! -->
-<script src="{{ assets('assets/js/setting-demo.js') }}"></script>
-<script src="{{ assets('assets/js/demo.js') }}"></script>
+<script src="{{ asset('assets/js/setting-demo.js') }}"></script>
+<script src="{{ asset('assets/js/demo.js') }}"></script>
 
 @include('layouts.script')
 </body>
