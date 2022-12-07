@@ -15,16 +15,16 @@ trait CollectAccountCreation{
         if (empty($check)) {
 
             $response = Http::post(env('WALLET_URL').'reserved_accounts', [
-                'body'=>[
+
+                'Authorization' => 'Bearer '.env('COLLECT_SCK'),
+                'accept' => 'application/json',
+                'content-type' => 'application/json',
+                
                     'email' => Auth::user()->email,
                     'bvn' => Auth::user()->bvn,
                     'account_name' => Auth::user()->first_name.''.Auth::user()->first_name,
                     'phone_number' => Auth::user()->phone_number
-                ],
-                'headers' => [
-                  'Authorization' => 'Bearer '.env('COLLECT_SCK'),
-                  'accept' => 'application/json',
-                  'content-type' => 'application/json',]
+
               ]);
 
             $data = $response->json('data');
