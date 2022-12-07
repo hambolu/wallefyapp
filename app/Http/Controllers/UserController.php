@@ -71,7 +71,7 @@ class UserController extends Controller
         }
 
 
-        $CollectAccountCreation = $this->index();
+        //$CollectAccountCreation = $this->index();
 
         return back()->with('success','Update Successfully!');;
     }

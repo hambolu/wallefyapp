@@ -26,6 +26,7 @@ trait CollectAccountCreation{
                 ]);
 
             $data = $response->json();
+            
             dd($data);
 
             $update = Account::where('user_id',Auth::id())->first();
