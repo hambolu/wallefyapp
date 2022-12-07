@@ -14,20 +14,20 @@ trait CollectAccountCreation{
         $check = Account::where('user_id',Auth::id())->first();
         if (empty($check)) {
 
-            $response = Http::post(env('COLLECT_URL').'reserved_accounts', [
-                'body'=>[
+            $response = Http::withHeaders([
+                'Accept' => 'application/json',
+                'Content-Type' => 'application/json',
+                "Authorization" => "Bearer ".env('COLLECT_SCK'),
+                ])->post(env('COLLECT_URL').'reserved_accounts', [
                     'email' => Auth::user()->email,
                     'bvn' => Auth::user()->bvn,
                     'account_name' => Auth::user()->first_name.''.Auth::user()->first_name,
-                    'phone_number' => Auth::user()->phone_number
-                ],
-                'headers' => [
-                  'Authorization' => 'Bearer '.env('COLLECT_SCK'),
-                  'accept' => 'application/json',
-                  'content-type' => 'application/json',]
-              ]);
+                    'phone_number' => Auth::user()->phone_number,
+                ]);
 
-            $data = $response->json('data');
+            $data = $response->json();
+            dd($data);
+
             $update = Account::where('user_id',Auth::id())->first();
             $update->account_name = $data['account_name'];
             $update->account_number = $data['account_number'];
@@ -38,7 +38,6 @@ trait CollectAccountCreation{
             $update->virtual_account_id = $data['id'];
             $update->user_id = Auth::id();
             $update->save();
-            dd($data);
         }
 
 
