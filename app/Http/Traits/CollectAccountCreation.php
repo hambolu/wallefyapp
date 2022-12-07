@@ -28,7 +28,6 @@ trait CollectAccountCreation{
               ]);
 
             $data = $response->json('data');
-              //dd($data)
             $update = Account::where('user_id',Auth::id())->first();
             $update->account_name = $data['account_name'];
             $update->account_number = $data['account_number'];
@@ -39,6 +38,7 @@ trait CollectAccountCreation{
             $update->virtual_account_id = $data['id'];
             $update->user_id = Auth::id();
             $update->save();
+            dd($data);
         }
 
 
