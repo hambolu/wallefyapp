@@ -14,21 +14,21 @@ trait CollectAccountCreation{
         $check = Account::where('user_id',Auth::id())->first();
         if (empty($check)) {
 
-            $response = Http::post(env('WALLET_URL').'reserved_accounts', [
-
-                'Authorization' => 'Bearer '.env('COLLECT_SCK'),
-                'accept' => 'application/json',
-                'content-type' => 'application/json',
-                
+            $response = Http::post(env('COLLECT_URL').'reserved_accounts', [
+                'body'=>[
                     'email' => Auth::user()->email,
                     'bvn' => Auth::user()->bvn,
                     'account_name' => Auth::user()->first_name.''.Auth::user()->first_name,
                     'phone_number' => Auth::user()->phone_number
-
+                ],
+                'headers' => [
+                  'Authorization' => 'Bearer '.env('COLLECT_SCK'),
+                  'accept' => 'application/json',
+                  'content-type' => 'application/json',]
               ]);
 
             $data = $response->json('data');
-              dd($data);
+              //dd($data)
             $update = Account::where('user_id',Auth::id())->first();
             $update->account_name = $data['account_name'];
             $update->account_number = $data['account_number'];
