@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use Auth;
 
-
+// Mono Account Creation
 trait AccountCreation{
 
     public function index()
@@ -68,20 +68,20 @@ trait AccountCreation{
             curl_close($curl);
 
 
-            // $response = Http::withHeaders([
-            //     'Content-Type: application/json',
-            //     'Accept' => 'application/json',
-            //     'mono-sec-key' => env('WALLET_SK_KEY'),
-            // ])->post(env('WALLET_URL').'accountholders',[
-            //     "entity" => Auth::user()->entity,
-            //     "first_name" => Auth::user()->first_name,
-            //     "last_name" => Auth::user()->last_name,
-            //     "address" => Auth::user()->address_line1,
-            //     "phone" => Auth::user()->phone_number,
-            //     "type" => Auth::user()->identity_type,
-            //     "number" => Auth::user()->nin,
-            //     "url" => Auth::user()->identity_url,
-            // ]);
+            $response = Http::withHeaders([
+                'Content-Type: application/json',
+                'Accept' => 'application/json',
+                'mono-sec-key' => env('WALLET_SK_KEY'),
+            ])->post(env('WALLET_URL').'accountholders',[
+                "entity" => Auth::user()->entity,
+                "first_name" => Auth::user()->first_name,
+                "last_name" => Auth::user()->last_name,
+                "address" => Auth::user()->address_line1,
+                "phone" => Auth::user()->phone_number,
+                "type" => Auth::user()->identity_type,
+                "number" => Auth::user()->nin,
+                "url" => Auth::user()->identity_url,
+            ]);
             $account_holder_id = json_decode($data);
             //dd($account_holder_id);
             if ($account_holder_id['status'] == 'failed') {

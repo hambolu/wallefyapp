@@ -8,11 +8,11 @@ use App\Models\Settings;
 use Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use App\Http\Traits\AccountCreation;
+use App\Http\Traits\CollectAccountCreation;
 
 class UserController extends Controller
 {
-    use AccountCreation;
+    use CollectAccountCreation;
 
     public function __construct()
     {
@@ -71,7 +71,7 @@ class UserController extends Controller
         }
 
 
-        $accountcreation = $this->index();
+        $CollectAccountCreation = $this->index();
 
         return back()->with('success','Update Successfully!');;
     }
