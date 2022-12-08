@@ -20,14 +20,15 @@ use App\Http\Controllers\SettingController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/', function () {
     return view('login');
 });
 Route::get('/register', function () {
     return view('register');
 });
+Route::group([ 'middleware' => 'auth'], function()
+{
+Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/transactions', [TransactionController::class, 'index']);
 Route::get('/admin/masteradmin', [AdminController::class, 'index']);
 Route::get('/profile', function () {
@@ -35,9 +36,11 @@ Route::get('/profile', function () {
 });
 Route::get('/account', [DashboardController::class, 'account']);
 Route::get('/settings', [SettingController::class, 'settings']);
+Route::get('/logout', [LogoutController::class, 'logout']);
 
 Route::post('/withdraw', [TransactionController::class, 'withdraw']);
 Route::post('/login', [LoginController::class, 'login']);
 Route::post('/register', [RegisterController::class, 'register'])->name('register');
 Route::post('/updateProfile', [UserController::class, 'updateProfile'])->name('updateProfile');
 Route::post('/addfund', [TransactionController::class, 'fundAccount']);
+});
