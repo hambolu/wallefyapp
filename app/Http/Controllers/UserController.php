@@ -8,11 +8,11 @@ use App\Models\Settings;
 use Auth;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Str;
-use App\Http\Traits\CollectAccountCreation;
+use App\Http\Traits\FlutterAccountCreation;
 
 class UserController extends Controller
 {
-    use CollectAccountCreation;
+    use FlutterAccountCreation;
 
     public function __construct()
     {
@@ -71,7 +71,7 @@ class UserController extends Controller
         }
 
 
-        //$CollectAccountCreation = $this->index();
+        $FlutterAccountCreation = $this->index();
 
         return back()->with('success','Update Successfully!');;
     }

@@ -5,25 +5,25 @@ use Illuminate\Support\Facades\Http;
 use App\Models\User;
 use App\Models\Account;
 use Auth;
+use Carbon\Carbon;
 
-// Collect Account Creation
-trait CollectAccountCreation{
+// Flutterwave Account Creation
+trait FlutterAccountCreation{
 
     public function index()
     {
+        $ref = 'WALFY'.Carbon::now()->timestamp;
         $check = Account::where('user_id',Auth::id())->first();
         if (empty($check)) {
-
-
             $response = Http::withHeaders([
                 'Accept' => 'application/json',
                 'Content-Type' => 'application/json',
-                "Authorization" => "Bearer sk_live_27oo5sbf97qvd7bqwf8q",
-                ])->post('https://api.collect.africa//reserved_accounts', [
+                "Authorization" => "Bearer FLWSECK-bb7ccbb28a318921f53dc239fd5e1cb1-X",
+                ])->post('https://api.flutterwave.com/v3/virtual-account-numbers', [
                     'email' => Auth::user()->email,
                     'bvn' => Auth::user()->bvn,
-                    'account_name' => Auth::user()->first_name.''.Auth::user()->first_name,
-                    'phone_number' => Auth::user()->phone_number,
+                    'tx_ref' => $ref,
+                    'is_permanent' => true,
                 ]);
 
             $data = $response->json();
@@ -41,7 +41,5 @@ trait CollectAccountCreation{
             $update->user_id = Auth::id();
             $update->save();
         }
-
-
     }
 }
