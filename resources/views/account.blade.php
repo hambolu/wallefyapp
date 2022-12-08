@@ -13,13 +13,13 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
-                                            <h5>Account Number : 1234567890</h5>
+                                            <h5>Account Number : {{  $account_details->account_number ?? '' }}</h5>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Account Name : Williams Joe</h5>
+                                            <h5>Account Name : {{  $account_details->account_name ?? '' }}</h5>
                                         </div>
                                         <div class="form-group">
-                                            <h5>Bank : Wema Bank</h5>
+                                            <h5>Bank : {{  $account_details->bank_name ?? '' }}</h5>
                                         </div>
                                     </div>
                                     <div class="col">

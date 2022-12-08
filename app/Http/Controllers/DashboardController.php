@@ -20,4 +20,11 @@ class DashboardController extends Controller
 
         return view('dashboard',compact('balance','trans'));
     }
+
+    public function account()
+    {
+        $account_details = Account::where('user_id',Auth::id())->first();
+
+        return view('account',compact('account_details'));
+    }
 }

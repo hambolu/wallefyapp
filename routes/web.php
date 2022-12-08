@@ -33,9 +33,7 @@ Route::get('/admin/masteradmin', [AdminController::class, 'index']);
 Route::get('/profile', function () {
     return view('userprofile');
 });
-Route::get('/account', function () {
-    return view('account');
-});
+Route::get('/account', [DashboardController::class, 'account']);
 Route::get('/settings', [SettingController::class, 'settings']);
 
 Route::post('/withdraw', [TransactionController::class, 'withdraw']);
