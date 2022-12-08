@@ -30,7 +30,7 @@ trait FlutterAccountCreation{
 
             $data = $response->json('data');
 
-            dd($data);
+            //dd($data);
 
             $update = Account::where('user_id',Auth::id())->first();
             $update->account_name = $data['account_name'];
