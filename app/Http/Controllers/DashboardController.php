@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use App\Models\Transaction;
 use App\Models\Account;
+use Auth;
+
+
 class DashboardController extends Controller
 {
     public function index(Request $request)
