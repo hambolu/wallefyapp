@@ -33,7 +33,6 @@ trait FlutterAccountCreation{
             //dd($data);
 
             $update = Account::where('user_id',Auth::id())->first();
-            $update->account_name = $data['account_name'];
             $update->account_number = $data['account_number'];
             $update->bank_name = $data['bank_name'];
             $update->reference = $data['order_ref'];
