@@ -24,4 +24,9 @@ function showDiv(divId, element)
 {
     document.getElementById(divId).style.display = element.value == 'BUSINESS' ? 'block' : 'none';
 }
+
+function showDiv(divId, element)
+{
+    document.getElementById(divId).style.display = element.value == 'Transfer' ? 'block' : 'none';
+}
 </script>
