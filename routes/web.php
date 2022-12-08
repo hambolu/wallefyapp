@@ -26,7 +26,7 @@ Route::get('/', function () {
 Route::get('/register', function () {
     return view('register');
 });
-Route::group([ 'middleware' => 'auth'], function()
+Route::group([ 'middleware' => 'guest'], function()
 {
 Route::get('/dashboard', [DashboardController::class, 'index']);
 Route::get('/transactions', [TransactionController::class, 'index']);
