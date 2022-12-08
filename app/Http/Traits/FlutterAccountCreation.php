@@ -24,20 +24,20 @@ trait FlutterAccountCreation{
                     'bvn' => Auth::user()->bvn,
                     'tx_ref' => $ref,
                     'is_permanent' => true,
+                    "firstname" => Auth::user()->first_name,
+                    "lastname"=> Auth::user()->last_name,
                 ]);
 
-            $data = $response->json();
+            $data = $response->json('data');
 
             dd($data);
 
             $update = Account::where('user_id',Auth::id())->first();
             $update->account_name = $data['account_name'];
             $update->account_number = $data['account_number'];
-            $update->bank_code = $data['bank_code'];
             $update->bank_name = $data['bank_name'];
-            $update->reference = $data['reference'];
-            $update->status = $data['status'];
-            $update->virtual_account_id = $data['id'];
+            $update->reference = $data['order_ref'];
+            $update->status = $data['account_status'];
             $update->user_id = Auth::id();
             $update->save();
         }
