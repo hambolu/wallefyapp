@@ -106,7 +106,7 @@ class TransactionController extends Controller
         $woo_pay->status = 'pending';
         $woo_pay->save();
 
-        $url = 'https://checkout.wallefy.com.ng/'.$woo_pay->reference;
+        $url = 'https://checkout.wallefy.com.ng/';
 
         // return Redirect::to($url);
 
