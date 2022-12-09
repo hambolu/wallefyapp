@@ -95,11 +95,27 @@ class TransactionController extends Controller
 
     public function api_payment(Request $request)
     {
+
+        $ref = 'walfy_'.Carbon::now()->timestamp;
         $woo_pay = new PaymentTransaction();
         $woo_pay->amount = $request->amount;
         $woo_pay->email = $request->email;
-        $woo_pay->reference = $request->reference;
+        $woo_pay->reference = $ref;
+        $woo_pay->order_id = $request->order_id;
         $woo_pay->callback_url = $request->callback_url;
+        $woo_pay->status = 'pending';
         $woo_pay->save();
+
+        $url = 'https://checkout.wallefy.com.ng/'.$woo_pay->reference;
+
+        // return Redirect::to($url);
+
+        return response()->json([
+            "status" => 'success',
+            "data" => array(
+                'checkout_url' => $url
+            ),
+        ],200);
+
     }
 }
